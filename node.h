@@ -1,3 +1,10 @@
+/*!
+    \brief This class stores information about the page instance.
+
+    The goal - to provide the implementation and management
+    of all relevant information about a particular page.
+*/
+
 #ifndef NODE_H
 #define NODE_H
 

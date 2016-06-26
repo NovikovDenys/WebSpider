@@ -34,9 +34,6 @@ MainWindow::~MainWindow()
     delete m_Ui;
 }
 
-/* When StartButton is clicked, the form fields are locked.
- * It sent a signal to start the model algorithm
- */
 void MainWindow::on_StartButton_clicked()
 {
     if (m_Ui->StartURL->hasAcceptableInput() && !m_Ui->textEdit->toPlainText().isEmpty()) {
@@ -53,9 +50,7 @@ void MainWindow::on_StartButton_clicked()
     }
 }
 
-/* When PauseButton is clicked, the form fields are locked.
- * Button text is changed and send pause signal to model
- */
+
 void MainWindow::on_PauseButton_clicked()
 {
     m_Ui->StartURL->setDisabled(true);
@@ -72,10 +67,7 @@ void MainWindow::on_PauseButton_clicked()
     emit pauseBtnClicked();
 }
 
-/* When CancelButton is clicked,
- * the form fields are unlocked,
- * and send signal to model
- */
+
 void MainWindow::on_CancelButton_clicked()
 {
     if(m_Ui->CancelButton->text() == STRING_EXIT)
@@ -92,9 +84,6 @@ void MainWindow::on_CancelButton_clicked()
     emit cancelOperation();
 }
 
-/* Slot receives a signal from the model, and resets the current page status in
- * the view
- */
 void MainWindow::pageInfoIsChanged(Node *page)
 {
     static int textFound = 1;
@@ -131,9 +120,6 @@ void MainWindow::pageInfoIsChanged(Node *page)
     m_Ui->progressBar->setValue(progress);
 }
 
-/* The slot receives a signal from the model algorithm is completed,
- *  and sets the information in a view
- */
 void MainWindow::searchIsComplete()
 {
     if(m_Ui->resultURLCountValue->text() != QString::number(m_Ui->UrlSpinBox->value()))

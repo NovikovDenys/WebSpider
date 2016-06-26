@@ -1,3 +1,12 @@
+/*!
+    \brief This class implements the tools to search
+    sites using breadth-first search algorithm.
+
+    The goal - to realize the right pass through
+    the graph and control the thread distribution to
+    process pages
+*/
+
 #ifndef ENGINE_H
 #define ENGINE_H
 #include <QRegExp>
@@ -19,6 +28,9 @@ public:
     SearchEngine(const SearchEngine &otherSearchEngine) = delete;
     SearchEngine operator=(SearchEngine &otherSearchEngine) = delete;
 
+    /*!
+     * Starts search algorithm
+     */
     void findTextOnWeb();
 
     Node *getQueueNodeAfterParse(int index) const;

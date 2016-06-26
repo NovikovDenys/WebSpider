@@ -1,3 +1,10 @@
+/*!
+    \brief This class keeps the information about the parsed pages.
+
+    The goal - to keep the model status, and manage the
+    creation of a class, that implements a search algorithm.
+*/
+
 #ifndef MODEL_H
 #define MODEL_H
 #include <QString>
